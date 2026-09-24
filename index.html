@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manuel Gomez | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f8ff;--surface:#fff;--text:#0f1b33;--muted:#5b6780;--acc:#2f80ff;--dark:#0b1730;--dark2:#101f3d;--line:#dbe6f7;--nav:rgba(11,23,48,.92);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1830;--surface:#12213f;--text:#eaf1ff;--muted:#a6b4d0;--line:#22345a}}
+:root[data-theme="dark"]{--bg:#0d1830;--surface:#12213f;--text:#eaf1ff;--muted:#a6b4d0;--line:#22345a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--acc);z-index:60}
+header{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:blur(8px);padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid #ffffff14}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:20px;color:#fff;letter-spacing:.3px}.logo b,.hero h1 b,footer .logo b{color:var(--acc)}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+nav a{color:#dbe6ff;font-size:14px;padding:22px 0;display:block;border-bottom:2px solid transparent}
+nav a.on{color:#fff;border-color:var(--acc)}
+.tools{display:flex;gap:10px;align-items:center}
+.ibtn{background:#ffffff14;border:1px solid #ffffff30;color:#fff;border-radius:99px;width:38px;height:34px;cursor:pointer;font-size:16px}
+#burger{display:none}
+.hero{background:linear-gradient(120deg,#0a1530,#12295a);color:#fff;padding:64px 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:end}
+.hero small{color:var(--acc);letter-spacing:3px;font-weight:600}
+.hero h1{font-size:clamp(40px,6vw,64px);line-height:1.05;margin:8px 0 12px;font-weight:800}
+.hero h2{font-weight:500;font-size:24px;margin:0 0 12px}
+.hero p{color:#cdd9f2;max-width:460px;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:56px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;border:1px solid #fff;color:#fff;font:600 14px Inter;cursor:pointer;background:transparent;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px #2f80ff55}
+.btn.p{background:var(--acc);border-color:var(--acc)}.btn.k{background:var(--dark);border-color:var(--dark)}
+.photo{position:relative;text-align:center}
+.photo img{width:100%;max-width:360px;display:block;margin:0 auto;border-radius:18px 18px 0 0;transition:transform .3s}
+.photo img:hover{transform:scale(1.02)}
+.quote{position:absolute;right:0;top:20px;font:500 26px/1.1 Caveat,cursive;color:#dbe6ff;transform:rotate(-8deg)}
+section{padding:64px 0}
+.eyebrow{color:var(--acc);font-weight:600;font-size:13px;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:22px;height:2px;background:var(--acc)}
+h3{font-size:28px;margin:6px 0 20px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.info{display:grid;gap:18px;border-left:1px solid var(--line);padding-left:28px}
+.info b{display:block;font-size:14px}.info span{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 16px;text-align:center;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 28px #2f80ff26}
+.ic{width:52px;height:52px;border-radius:50%;background:#2f80ff22;display:grid;place-items:center;margin:0 auto 10px;font-size:22px}
+.card b{display:block}.card p{color:var(--muted);font-size:13px;margin:6px 0 0}
+#edu{background:var(--dark);color:#fff}
+.tl{list-style:none;margin:0;padding:0 0 0 24px;border-left:2px solid var(--acc)}
+.tl li{position:relative;padding:12px 16px;margin-bottom:8px;border-radius:10px;transition:background .2s}
+.tl li:hover{background:#ffffff12}
+.tl li:before{content:"";position:absolute;left:-32px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--dark);border:2px solid var(--acc)}
+.tl li.now:before{background:var(--acc)}
+.tl small{display:block;color:#9db4e0}.tl em{color:var(--acc);font-style:normal;font-size:13px}
+.goal{display:flex;gap:20px;align-items:center;font-size:17px}
+.goal .ic{width:68px;height:68px;font-size:30px;flex:none;margin:0}
+#resume .box{margin-top:28px;background:#e8f1ff;border-radius:14px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:#0f1b33}
+:root[data-theme="dark"] #resume .box{background:#16294f;color:#eaf1ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #resume .box{background:#16294f;color:#eaf1ff}}
+.box h3{margin:4px 0 8px}.box p{margin:0 0 16px;font-size:14px}
+.cv{font-size:64px}
+#contact{background:linear-gradient(#0b1730,#12274f);color:#fff}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.row{display:flex;align-items:center;gap:12px;margin:10px 0}
+.row button{background:none;border:1px solid #ffffff40;color:#dbe6ff;border-radius:6px;font:12px Inter;padding:2px 8px;cursor:pointer}
+form{display:grid;gap:10px}
+input,textarea{width:100%;padding:11px 12px;border-radius:8px;border:1px solid #ffffff30;background:#ffffff10;color:#fff;font:14px Inter}
+input::placeholder,textarea::placeholder{color:#9db4e0}
+.err{color:#ff9f9f;font-size:13px;min-height:18px}.ok{color:#7be0a5}
+footer{background:#0a1329;color:#c5d2ee;padding:22px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+footer nav{display:flex;gap:14px}
+#top,#toast{position:fixed;z-index:55}
+#top{right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:0;background:var(--acc);color:#fff;font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
+#top.show{opacity:1;pointer-events:auto}
+#toast{left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:#fff;color:#0f1b33;padding:8px 16px;border-radius:99px;font-size:14px;opacity:0;transition:.3s}
+#toast.show{opacity:1;transform:translateX(-50%)}
+#more{display:none;margin-top:12px;color:var(--muted);font-size:14px}
+@media(max-width:820px){
+ #burger{display:block}
+ nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--dark);padding:8px 24px}
+ nav ul.open{display:flex}nav a{padding:12px 0}
+ .hero .wrap,.two,.ct{grid-template-columns:1fr}.cards{grid-template-columns:1fr}
+ .info{border:0;padding:0}#resume .box{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<header><div class="wrap nav">
+ <a class="logo" href="#home">MANUEL <b>GOMEZ</b></a>
+ <nav aria-label="Main"><ul id="menu">
+  <li><a href="#home" class="on">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+  <li><a href="#edu">Education</a></li><li><a href="#objective">Objective</a></li><li><a href="#resume">Resume</a></li><li><a href="#contact">Contact</a></li>
+ </ul></nav>
+ <div class="tools"><button class="ibtn" id="theme" aria-label="Toggle dark or light mode">🌙</button><button class="ibtn" id="burger" aria-label="Menu">☰</button></div>
+</div></header>
+
+<main>
+<div class="hero" id="home"><div class="wrap">
+ <div><small>HELLO, I'M</small><h1>MANUEL <b>GOMEZ</b></h1><h2>Aspiring IT Professional</h2>
+ <p>A dedicated and motivated individual seeking opportunities to apply my skills, contribute to a professional team, and continuously develop my knowledge and abilities.</p>
+ <div class="btns"><a class="btn p" href="#skills">👁 View My Work</a><a class="btn" href="{{ url_for('resume_download') }}">⬇ Download Resume</a><a class="btn" href="#contact">✉ Contact Me</a></div></div>
+ <div class="photo"><div class="quote">Small steps<br>to big dreams.</div><img alt="Portrait of Manuel Gomez" src="{{ url_for('static', filename='photo.jpg') }}"></div>
+</div></div>
+
+<section id="about"><div class="wrap two">
+ <div><div class="eyebrow">ABOUT ME</div><h3>Get to Know Me</h3>
+ <p>I am Manuel F. Gomez, currently pursuing my tertiary education at Batangas State University. I am a motivated individual who is eager to gain professional experience, contribute my skills to a company, and continuously improve my knowledge and abilities.</p>
+ <button class="btn k" id="moreBtn">More About Me ›</button>
+ <p id="more">I enjoy learning new tools, working with people, and taking on tasks that help me grow toward a career in IT.</p></div>
+ <div class="info">
+  <div><b>🎓 Currently Studying</b><span>Batangas State University (2024 – Present)</span></div>
+  <div><b>📍 Location</b><span>Tanza, Cavite</span></div>
+  <div><b>🎯 Career Goal</b><span>To build a professional career where I can apply my skills, contribute to the organization, and continuously expand my knowledge and abilities.</span></div>
+ </div>
+</div></section>
+
+<section id="skills" style="padding-top:0"><div class="wrap">
+ <div class="eyebrow">MY SKILLS</div><h3>What I Can Do</h3>
+ <div class="cards">
+  <div class="card"><div class="ic">💬</div><b>Communication Skills</b><p>Effectively share ideas and work with others.</p></div>
+  <div class="card"><div class="ic">🖥</div><b>Basic Computer Skills</b><p>Comfortable using basic computer applications and tools.</p></div>
+  <div class="card"><div class="ic">👥</div><b>Teamwork</b><p>Collaborate and support others to achieve common goals.</p></div>
+ </div>
+</div></section>
+
+<section id="edu"><div class="wrap">
+ <div class="eyebrow">EDUCATION</div><h3>My Educational Background</h3>
+ <ul class="tl">
+  <li class="now"><small>2024 – Present</small><b>Batangas State University</b> <em>Tertiary</em></li>
+  <li><small>2023 – 2024</small><b>Kim Harold (TESDA)</b></li>
+  <li><small>2021 – 2023</small><b>Tuy Senior High School</b> <em>Secondary</em></li>
+  <li><small>2017 – 2021</small><b>Bolbok National High School</b></li>
+  <li><small>2011 – 2017</small><b>Bolbok Elementary School</b> <em>Primary</em></li>
+ </ul>
+</div></section>
+
+<section id="objective"><div class="wrap">
+ <div class="eyebrow">CAREER OBJECTIVE</div><h3>My Goal</h3>
+ <div class="goal"><div class="ic">🎯</div><p>To be able to work in a company through which I can contribute and carry out my skills and at the same time widens my ability and knowledge.</p></div>
+</div></section>
+
+<section id="resume" style="padding-top:0"><div class="wrap"><div class="box">
+ <div><div class="eyebrow">RESUME</div><h3>View My Resume</h3>
+ <p>Want to know more about me? View or download my complete resume for additional information about my education, skills, and qualifications.</p>
+ <a class="btn k" href="{{ url_for('resume_download') }}">⬇ Download Resume</a> <a class="btn k" href="{{ url_for('resume_view') }}" target="_blank" rel="noopener">👁 View Resume</a></div><div class="cv">📄</div>
+</div></div></section>
+
+<section id="contact"><div class="wrap ct">
+ <div><div class="eyebrow">CONTACT ME</div><h3>Let's Connect</h3>
+ <p style="color:#cdd9f2">Feel free to reach out to me. I'm open to new opportunities and would love to hear from you.</p>
+ <div class="row">✉ {{ p.email }} <button data-copy="{{ p.email }}" data-msg="Email copied!">Copy</button></div>
+ <div class="row">📞 {{ p.phone }} <button data-copy="{{ p.phone }}" data-msg="Phone number copied!">Copy</button></div>
+ <div class="row">📍 Tanza, Cavite</div>
+ <div class="btns" style="padding:8px 0 0"><a class="btn p" href="mailto:{{ p.email }}">✉ Email Me</a><a class="btn" href="tel:{{ p.phone }}">📞 Call Me</a></div></div>
+ <form id="cf" novalidate>
+  <input name="n" placeholder="Your name" aria-label="Name"><input name="e" type="email" placeholder="Your email" aria-label="Email">
+  <input name="s" placeholder="Subject" aria-label="Subject"><textarea name="m" rows="4" placeholder="Message" aria-label="Message"></textarea>
+  <div class="err" id="err" role="alert"></div><button class="btn p" type="submit">Send Message</button>
+ </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <span class="logo">MANUEL <b>GOMEZ</b></span><span>© {{ p.year }} {{ p.name }}. All rights reserved.</span>
+ <span><a href="mailto:{{ p.email }}">Email</a>{% for n,u in p.socials.items() if u %} · <a href="{{ u }}" target="_blank" rel="noopener">{{ n }}</a>{% endfor %}</span>
+</div></footer>
+<button id="top" aria-label="Back to top">↑</button><div id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),root=document.documentElement;
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),1800)}
+// theme (remembered per viewer)
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+function icon(){const d=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;$('#theme').textContent=d?'☀️':'🌙'}
+icon();
+$('#theme').onclick=()=>{const d=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;const n=d?'light':'dark';root.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}icon()};
+// mobile menu
+$('#burger').onclick=()=>$('#menu').classList.toggle('open');
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>$('#menu').classList.remove('open'));
+// active nav + progress + back to top
+const secs=[...document.querySelectorAll('#home,#about,#skills,#edu,#objective,#resume,#contact')],links=[...document.querySelectorAll('#menu a')];
+function onScroll(){const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+ $('#prog').style.width=(h>0?y/h*100:0)+'%';$('#top').classList.toggle('show',y>500);
+ let cur=secs[0].id;secs.forEach(s=>{if(s.getBoundingClientRect().top<140)cur=s.id});
+ links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur))}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+// more about me
+$('#moreBtn').onclick=()=>{const m=$('#more');m.style.display=m.style.display==='block'?'none':'block'};
+// copy
+document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast(b.dataset.msg)}catch(e){toast('Copy not available. Select and copy manually.')}});
+// contact form -> opens the visitor's email app
+$('#cf').onsubmit=async e=>{e.preventDefault();const f=e.target,er=$('#err');er.className='err';
+ const body={name:f.n.value,email:f.e.value,subject:f.s.value,message:f.m.value};
+ try{const r=await fetch('/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const d=await r.json();
+  if(d.ok){er.className='err ok';er.textContent=d.message;f.reset()}else er.textContent=d.error||'Something went wrong.'}
+ catch(x){er.textContent='Could not send. Please try again.'}};
+</script>
+</body>
+</html>
